@@ -76,7 +76,9 @@ class SalaryEmployeeWithBonus(SalaryEmployee):
 
     def __str__(self):
         salary_info = super().__str__()
-        return f"{salary_info} and receives a bonus commission of {self.bonus_commission}.Their total pay is {self.get_pay()}."
+        commission_info = f"and receives a commission for {self.bonus_commission} "
+        return f"{salary_info} {commission_info} Their total pay is {self.get_pay()}."
+        
 
 
 class HourlyEmployeeWithBonus(HourlyEmployee):
@@ -89,7 +91,9 @@ class HourlyEmployeeWithBonus(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a bonus commission of {self.bonus_commission}.Their total pay is {self.get_pay()}."
+        commission_info = f"and receives a commission for {self.bonus_commission} "
+        return f"{hourly_info} {commission_info} Their total pay is {self.get_pay()}."
+     
 
 
 class SalaryEmployeeWithContractCommission(SalaryEmployee):
@@ -104,8 +108,8 @@ class SalaryEmployeeWithContractCommission(SalaryEmployee):
 
     def __str__(self):
         salary_info = super().__str__()
-        return f"{salary_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract. Their total pay is {self.get_pay()}."
-
+        commission_info = f"and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
+        return f"{salary_info} {commission_info} Their total pay is {self.get_pay()}."
 
 class HourlyEmployeeWithContractCommission(HourlyEmployee):
     def __init__(self, name, hours_worked, hourly_rate, num_commissions, commission_rate):
@@ -120,9 +124,9 @@ class HourlyEmployeeWithContractCommission(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract.Their total pay is {self.get_pay()}."
-
-
+        commission_info = f"and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
+        return f"{hourly_info} {commission_info} Their total pay is {self.get_pay()}."
+        
 # Examples of different employees
 billie = SalaryEmployee('Billie', 4000)
 charlie = HourlyEmployee('Charlie', 100, 25)
