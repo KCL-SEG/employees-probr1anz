@@ -12,6 +12,35 @@ class Employee:
         return self.name
 
 
+# Billie works on a monthly salary of 4000.  Their total pay is 4000.
+billie = Employee('Billie')
+
+# Charlie works on a contract of 100 hours at 25/hour.  Their total pay is 2500.
+charlie = Employee('Charlie')
+
+# Renee works on a monthly salary of 3000 and receives a commission for 4 contract(s) at 200/contract.  Their total pay is 3800.
+renee = Employee('Renee')
+
+# Jan works on a contract of 150 hours at 25/hour and receives a commission for 3 contract(s) at 220/contract.  Their total pay is 4410.
+jan = Employee('Jan')
+
+# Robbie works on a monthly salary of 2000 and receives a bonus commission of 1500.  Their total pay is 3500.
+robbie = Employee('Robbie')
+
+# Ariel works on a contract of 120 hours at 30/hour and receives a bonus commission of 600.  Their total pay is 4200.
+ariel = Employee('Ariel')
+
+class Employee:
+    def __init__(self, name):
+        self.name = name
+
+    def get_pay(self):
+        pass
+
+    def __str__(self):
+        return self.name
+
+
 class SalaryEmployee(Employee):
     def __init__(self, name, monthly_salary):
         super().__init__(name)
@@ -47,7 +76,7 @@ class SalaryEmployeeWithBonus(SalaryEmployee):
 
     def __str__(self):
         salary_info = super().__str__()
-        return f"{salary_info} and receives a bonus commission of {self.bonus_commission}. Their total pay is {self.get_pay()}."
+        return f"{salary_info} and receives a bonus commission of {self.bonus_commission}.Their total pay is {self.get_pay()}."
 
 
 class HourlyEmployeeWithBonus(HourlyEmployee):
@@ -60,7 +89,7 @@ class HourlyEmployeeWithBonus(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a bonus commission of {self.bonus_commission}. Their total pay is {self.get_pay()}."
+        return f"{hourly_info} and receives a bonus commission of {self.bonus_commission}.Their total pay is {self.get_pay()}."
 
 
 class SalaryEmployeeWithContractCommission(SalaryEmployee):
@@ -91,7 +120,7 @@ class HourlyEmployeeWithContractCommission(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract. Their total pay is {self.get_pay()}."
+        return f"{hourly_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract.Their total pay is {self.get_pay()}."
 
 
 # Examples of different employees
@@ -103,9 +132,9 @@ robbie = SalaryEmployeeWithBonus('Robbie', 2000, 1500)
 ariel = HourlyEmployeeWithBonus('Ariel', 120, 30, 600)
 
 # Test cases
-print(str(billie))
-print(str(charlie))
-print(str(renee))
-print(str(jan))
-print(str(robbie))
-print(str(ariel))
+print(f"{billie}: billie.get_pay() must return {billie.get_pay()}.")
+print(f"{charlie}: charlie.get_pay() must return {charlie.get_pay()}.")
+print(f"{renee}: renee.get_pay() must return {renee.get_pay()}.")
+print(f"{jan}: jan.get_pay() must return {jan.get_pay()}.")
+print(f"{robbie}: robbie.get_pay() must return {robbie.get_pay()}.")
+print(f"{ariel}: ariel.get_pay() must return {ariel.get_pay()}.")
