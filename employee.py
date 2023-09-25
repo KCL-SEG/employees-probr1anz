@@ -47,7 +47,7 @@ class SalaryEmployeeWithBonus(SalaryEmployee):
 
     def __str__(self):
         salary_info = super().__str__()
-        return f"{salary_info} and receives a bonus commission of {self.bonus_commission}."
+        return f"{salary_info} and receives a bonus commission of {self.bonus_commission}. Their total pay is {self.get_pay()}."
 
 
 class HourlyEmployeeWithBonus(HourlyEmployee):
@@ -60,7 +60,7 @@ class HourlyEmployeeWithBonus(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a bonus commission of {self.bonus_commission}."
+        return f"{hourly_info} and receives a bonus commission of {self.bonus_commission}. Their total pay is {self.get_pay()}."
 
 
 class SalaryEmployeeWithContractCommission(SalaryEmployee):
@@ -75,7 +75,7 @@ class SalaryEmployeeWithContractCommission(SalaryEmployee):
 
     def __str__(self):
         salary_info = super().__str__()
-        return f"{salary_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
+        return f"{salary_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract. Their total pay is {self.get_pay()}."
 
 
 class HourlyEmployeeWithContractCommission(HourlyEmployee):
@@ -91,7 +91,7 @@ class HourlyEmployeeWithContractCommission(HourlyEmployee):
 
     def __str__(self):
         hourly_info = super().__str__()
-        return f"{hourly_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
+        return f"{hourly_info} and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract. Their total pay is {self.get_pay()}."
 
 
 # Examples of different employees
@@ -103,9 +103,9 @@ robbie = SalaryEmployeeWithBonus('Robbie', 2000, 1500)
 ariel = HourlyEmployeeWithBonus('Ariel', 120, 30, 600)
 
 # Test cases
-print(f"{billie}: billie.get_pay() must return {billie.get_pay()}.")
-print(f"{charlie}: charlie.get_pay() must return {charlie.get_pay()}.")
-print(f"{renee}: renee.get_pay() must return {renee.get_pay()}.")
-print(f"{jan}: jan.get_pay() must return {jan.get_pay()}.")
-print(f"{robbie}: robbie.get_pay() must return {robbie.get_pay()}.")
-print(f"{ariel}: ariel.get_pay() must return {ariel.get_pay()}.")
+print(str(billie))
+print(str(charlie))
+print(str(renee))
+print(str(jan))
+print(str(robbie))
+print(str(ariel))
