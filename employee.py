@@ -26,7 +26,7 @@ class MonthlyEmployee(Employee):
         return self.monthly_salary
 
     def get_pay_explanation(self):
-        return f"Monthly Salary: {self.monthly_salary}"
+        return f"works on a monthly salary of {self.monthly_salary}. Their total pay is {self.monthly_salary}."
 
 
 class ContractEmployee(Employee):
@@ -43,9 +43,10 @@ class ContractEmployee(Employee):
         return contract_pay + commission_pay
 
     def get_pay_explanation(self):
-        contract_explanation = f"Contract Pay: {self.hours_worked} hours * {self.hourly_rate}/hour"
-        commission_explanation = f"Commission: {self.num_commissions} contracts * {self.commission_rate}/contract"
-        return f"{contract_explanation}\n{commission_explanation}"
+        contract_explanation = f"works on a contract of {self.hours_worked} hours at {self.hourly_rate}/hour"
+        commission_explanation = f"and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
+        total_pay_explanation = f"Their total pay is {self.get_pay()}."
+        return f"{contract_explanation} {commission_explanation} {total_pay_explanation}"
 
 
 # Examples of different employees
