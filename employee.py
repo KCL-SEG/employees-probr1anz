@@ -75,7 +75,7 @@ class SalaryEmployeeWithBonus(SalaryEmployee):
 
     def __str__(self):
         salary_info = f"{self.name}  works on a monthly salary of {self.monthly_salary}"
-        bonus_info = f"and receives a commission for {self.bonus_commission}."
+        bonus_info = f"and receives a bonus commission for {self.bonus_commission}."
         total_pay_info = f"Their total pay is {self.get_pay()}."
         return f"{salary_info} {bonus_info} {total_pay_info}"
 
@@ -89,8 +89,8 @@ class HourlyEmployeeWithBonus(HourlyEmployee):
         return super().get_pay() + self.bonus_commission
 
     def __str__(self):
-        hourly_info = f"{self.name} works on a contract of {self.hours_worked} hours at {self.hourly_rate}/hour."
-        bonus_info = f"and receives a commission for {self.bonus_commission}."
+        hourly_info = f"{self.name} works on a contract of {self.hours_worked} hours at {self.hourly_rate}/hour"
+        bonus_info = f"and receives a bonus commission for {self.bonus_commission}."
         total_pay_info = f"Their total pay is {self.get_pay()}."
         return f"{hourly_info} {bonus_info} {total_pay_info}"
 
@@ -124,7 +124,7 @@ class HourlyEmployeeWithContractCommission(HourlyEmployee):
         return contract_pay + commission_pay
 
     def __str__(self):
-        hourly_info = f"{self.name} works on a contract of {self.hours_worked} hours at {self.hourly_rate}/hour."
+        hourly_info = f"{self.name} works on a contract of {self.hours_worked} hours at {self.hourly_rate}/hour"
         commission_info = f"and receives a commission for {self.num_commissions} contract(s) at {self.commission_rate}/contract."
         total_pay_info = f"Their total pay is {self.get_pay()}."
         return f"{hourly_info} {commission_info} {total_pay_info}"
