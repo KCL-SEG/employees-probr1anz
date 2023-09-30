@@ -77,7 +77,7 @@ class SalaryEmployeeWithBonus(SalaryEmployee):
         salary_info = f"{self.name} works on a monthly salary of {self.monthly_salary}"
         bonus_info = f"and receives a bonus commission of {self.bonus_commission}."
         total_pay_info = f"Their total pay is {self.get_pay()}."
-        return f"{salary_info} {bonus_info}\s+{total_pay_info}"
+        return f"{salary_info} {bonus_info} {total_pay_info}"
 
 
 class HourlyEmployeeWithBonus(HourlyEmployee):
